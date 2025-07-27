@@ -4,6 +4,7 @@ import express from 'express';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import bootstrap from './main.server';
+import { render } from '@netlify/angular-runtime/common-engine.mjs'
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -62,6 +63,16 @@ if (isMainModule(import.meta.url)) {
   app.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
+}
+
+/**
+ * Function to netlify deployment
+ * @param request 
+ * @param context 
+ * @returns 
+ */
+export async function netlifyCommonEngineHandler(request: Request, context: any): Promise<Response>{
+  return await render(commonEngine);
 }
 
 export default app;

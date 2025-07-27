@@ -8,7 +8,7 @@ import { render } from '@netlify/angular-runtime/common-engine.mjs'
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
-const indexHtml = join(serverDistFolder, 'index.server.html');
+// const indexHtml = join(serverDistFolder, 'index.server.html');
 
 const app = express();
 const commonEngine = new CommonEngine();
@@ -45,7 +45,7 @@ app.get('**', (req, res, next) => {
   commonEngine
     .render({
       bootstrap,
-      documentFilePath: indexHtml,
+      // documentFilePath: indexHtml,
       url: `${protocol}://${headers.host}${originalUrl}`,
       publicPath: browserDistFolder,
       providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],

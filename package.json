@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "start:ssr": "node dist/pokemon-ssr/server/server.mjs"
+    "start:ssr": "npm run watch & node dist/pokemon-ssr/server/server.mjs"
   },
   "private": true,
   "dependencies": {

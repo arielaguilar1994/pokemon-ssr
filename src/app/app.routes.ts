@@ -14,11 +14,11 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/pricing/pricing-pages.component')
     },
     {
-        path: 'pokemons',
+        path: 'pokemons/page/:page',
         loadComponent: () => import('./pages/pokemons/pokemons.component')
     },
     {
-        path: 'pokemon/:id',
+        path: 'pokemons/:id',
         loadComponent: () => import('./pages/pokemon-detail/pokemon-detail.component')
     },
     {

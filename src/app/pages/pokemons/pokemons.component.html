@@ -2,13 +2,13 @@
 <h2 class="text-xl">Pagina Actual: {{ currentPage() }}</h2>
 
 <hr class="my-2" />
-@if (pokemons()) {
+@if (pokemons().length) {
 <app-pokemon-list [pokemons]="pokemons()"/>
 } @else {
 <app-pokemon-list-skeleton />
 }
 
 <div class="flex justify-between">
-  <button (click)="loadPokemons(-1)" class="mt-2">Before</button>
-  <button (click)="loadPokemons(+1)" class="mt-2">Next</button>
+  <button [disabled]="currentPage()! === 1" [routerLink]="['/pokemons/page', currentPage()! - 1]" class="mt-2">Before</button>
+  <button [routerLink]="['/pokemons/page', currentPage()! + 1]" class="mt-2">Next</button>
 </div>

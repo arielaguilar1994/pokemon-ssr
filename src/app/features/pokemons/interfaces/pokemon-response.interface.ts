@@ -1,7 +1,7 @@
 export interface IPokemonResponse {
     count: number;
     next: string;
-    previous: string;
+    previous?: string;
     results: IPokemonResult[];
 }
 

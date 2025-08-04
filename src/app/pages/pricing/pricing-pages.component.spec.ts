@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { PricingPagesComponent } from './pricing-pages.component';
+import PricingPagesComponent from './pricing-pages.component';
 
 describe('PricingPagesComponent', () => {
   let component: PricingPagesComponent;
